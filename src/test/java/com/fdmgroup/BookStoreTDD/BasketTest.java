@@ -18,21 +18,21 @@ public class BasketTest {
 
 	@Test
 	public void test_GetBooksInBasket_ReturnsEmptyBookList_IfNoBooksHaveBeenAdded(){
-		int result = basket.getBooksInBasket();
+		int result = basket.getBasket().size();
 		assertEquals(0, result);
 	}
 	
 	@Test
 	public void test_GetBooksInBasket_ReturnsArrayOfLengthOne_AfterAddBookMethodIsCalledWithOneBook(){
 		basket.addBook(book);
-		assertEquals(1, basket.getBooksInBasket());	
+		assertEquals(1, basket.getBasket().size());	
 	}
 	
 	@Test
 	public void test_GetBooksInBasket_ReturnsArrayOfLengthOne_AfterAddBookMethodIsCalledWithTwoBooks(){
 		basket.addBook(book);
 		basket.addBook(book);
-		assertEquals(2, basket.getBooksInBasket());
+		assertEquals(2, basket.getBasket().size());
 		
 	}
 
